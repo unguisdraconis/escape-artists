@@ -80,6 +80,17 @@ export const Barplot = ({ width, height, data }) => {
           stroke="#808080"
           strokeOpacity={0.2}
         />
+        <text
+          x={xScale(count)}
+          y={-10}
+          textAnchor="middle"
+          alignmentBaseline="central"
+          fontSize={12}
+          fill="#808080"
+          opacity={1}
+        >
+          {count}
+        </text>
       </g>
     ));
 
