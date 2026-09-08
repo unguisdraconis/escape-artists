@@ -5,6 +5,7 @@ const barplotPadding = 0.4;
 
 export const Barplot = ({ width, height, data }) => {
   const groups = data.map((d) => d.name).reverse();
+  const maxCount = d3.max(data, (d) => d.count) ?? 0;
   const yScale = d3
     .scaleBand()
     .domain(groups)
@@ -15,7 +16,7 @@ export const Barplot = ({ width, height, data }) => {
   // X axis
   const xScale = d3
     .scaleLinear()
-    .domain([0, Math.max(...data.map((d) => d.count))])
+    .domain([0, maxCount])
     .range([0, width]);
 
   // Build the rectangles
@@ -86,7 +87,7 @@ export const Barplot = ({ width, height, data }) => {
           textAnchor="middle"
           alignmentBaseline="central"
           fontSize={12}
-          fill="#808080"
+          fill="#666666"
           opacity={1}
         >
           {count}
@@ -96,10 +97,18 @@ export const Barplot = ({ width, height, data }) => {
 
   return (
     <div>
+      <p id="chart-description" className="visually-hidden">
+        Horizontal bar chart comparing {data.length} disease or pathogen
+        categories by reported laboratory-acquired infection count for the
+        stated period 1970–2021.
+      </p>
       <svg
         width={width}
         height={height}
         className="barplot"
+        role="img"
+        aria-labelledby="chart-title"
+        aria-describedby="chart-subtitle chart-description"
         style={{ overflow: "visible" }}
       >
         {grid}
@@ -120,13 +129,30 @@ export const Barplot = ({ width, height, data }) => {
             alignmentBaseline="central"
             fontFamily="sans-serif"
             fontSize="12"
-            fill="#808080"
+            fill="#666666"
             fillOpacity={1}
           >
             {0}
           </text>
         </g>
       </svg>
+      <table className="visually-hidden">
+        <caption>Laboratory-acquired infection counts, 1970–2021</caption>
+        <thead>
+          <tr>
+            <th scope="col">Disease or pathogen</th>
+            <th scope="col">Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[...data].reverse().map((d) => (
+            <tr key={d.name}>
+              <th scope="row">{d.name}</th>
+              <td>{d.count}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
