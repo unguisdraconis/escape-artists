@@ -6,6 +6,8 @@ An early [D3 Loves React](https://www.d3indepth.com/d3-loves-react/) learning pr
 
 [View the chart on GitHub Pages](https://unguisdraconis.github.io/escape-artists/)
 
+![A recreation of an Economist-inspired horizontal bar chart about laboratory-acquired infections.](docs/images/escape-artists.png)
+
 ## Assignment Context
 
 The assignment asked learners to recreate a polished reference graphic using scales, bars, grid lines, labels, and title/subtitle/footer composition. The goal was to practice the chart's structure and visual relationships rather than reproduce every pixel exactly.
@@ -17,16 +19,16 @@ This project was a reconstruction exercise rather than an original chart design.
 The chart compares nine disease or pathogen categories using reported counts of laboratory-acquired infections for the stated period 1970–2021. Horizontal bar length encodes the count. Labels move inside or outside a bar depending on the available bar length, while vertical grid lines and values above the plot support quantitative reading.
 
 | Disease or pathogen | Count |
-| --- | ---: |
-| Hantavirus | 6 |
-| Tularemia | 7 |
-| Dengue | 7 |
-| Ebola | 9 |
-| E. coli | 11 |
-| Tuberculosis | 15 |
-| Salmonella | 17 |
-| Vaccinia | 18 |
-| Brucella | 54 |
+| ------------------- | ----: |
+| Hantavirus          |     6 |
+| Tularemia           |     7 |
+| Dengue              |     7 |
+| Ebola               |     9 |
+| E. coli             |    11 |
+| Tuberculosis        |    15 |
+| Salmonella          |    17 |
+| Vaccinia            |    18 |
+| Brucella            |    54 |
 
 ## Data and Provenance
 
