@@ -10,6 +10,8 @@ An early [D3 Loves React](https://www.d3indepth.com/d3-loves-react/) learning pr
 
 The assignment asked learners to recreate a polished reference graphic using scales, bars, grid lines, labels, and title/subtitle/footer composition. The goal was to practice the chart's structure and visual relationships rather than reproduce every pixel exactly.
 
+This project was a reconstruction exercise rather than an original chart design. I used browser DevTools to examine the structure of the reference visualization, then pieced together my own React/D3 implementation while practicing the scale, labeling, grid, and composition techniques from the course.
+
 ## What the Chart Shows
 
 The chart compares nine disease or pathogen categories using reported counts of laboratory-acquired infections for the stated period 1970–2021. Horizontal bar length encodes the count. Labels move inside or outside a bar depending on the available bar length, while vertical grid lines and values above the plot support quantitative reading.
@@ -45,7 +47,7 @@ The repository does not establish an independently verified download, dataset ve
 
 ## Learning Progression
 
-This project follows the simpler `barchart` exercise. It advances from basic bar construction toward editorial hierarchy, grid and tick reasoning, conditional label placement, source/footer treatment, and reference-driven visual composition.
+This project follows the simpler `barchart` exercise. It advances from basic bar construction toward editorial hierarchy, grid and tick reasoning, conditional label placement, source/footer treatment, and reference-driven visual composition. The process of inspecting a professional reference, identifying its structural pieces, and reconstructing them within the course architecture is a central part of that progression.
 
 ## Accessibility
 
